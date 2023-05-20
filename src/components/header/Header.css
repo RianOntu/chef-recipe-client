@@ -1,6 +1,7 @@
-a{
+.nav-item a{
     text-decoration: none;
     margin-right: 10px;
+    color:black!important;
 }
 nav{
     background-color: white;
