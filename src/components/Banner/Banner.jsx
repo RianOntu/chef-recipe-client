@@ -8,7 +8,7 @@ const Banner = () => {
         <div className="container">
             <div className='description'>
             <h1 >Explore various indian <br /> chefs now</h1>
-        <button className='btn btn-primary'>Explore</button>
+        <button className='btn btn-success'>Explore</button>
             </div>
     
         </div>
