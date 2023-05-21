@@ -48,6 +48,10 @@ const handleLogin=event=>{
   <p>New to this website?Please <Link to='/register'>Register</Link></p>
  
   <button type="submit" class="btn btn-primary">Login</button>
+  <h4 className='text-center'>Or</h4>
+  <div className="d-flex">
+    
+  </div>
 </form>
         </div>
     );

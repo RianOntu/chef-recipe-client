@@ -4,7 +4,10 @@ import './Header.css';
 import { AuthenticationContext } from '../Providers/AuthenticationProvider';
 
 const Header = () => {
-  const {user}=useContext(AuthenticationContext);
+  const {user,logOut}=useContext(AuthenticationContext);
+  const handleLogout=()=>{
+    logOut().then().catch(error=>console.log(error))
+  }
     return (
         <div>
            <nav class="navbar navbar-expand-lg">
@@ -23,10 +26,10 @@ const Header = () => {
         </li>
         <li className='photo'>
         {
-          user?<div className='d-flex align-items-center'><li className='nav-item'><Link>Logout</Link></li><li className='nav-item'><img data-bs-toggle="tooltip" data-bs-placement="bottom" title={user.displayName} src={user.photoURL} alt="" /></li></div>:<li className='nav-item'><Link to='/login'>Login</Link></li>
+          user?<div className='d-flex align-items-center'><li onClick={handleLogout} className='nav-item'><Link>Logout</Link></li><li className='nav-item'><img data-bs-toggle="tooltip" data-bs-placement="bottom" title={user.displayName} src={user.photoURL} alt="" /></li></div>:<li className='nav-item'><Link to='/login'>Login</Link></li>
         }
         </li>
-        
+
       
        
       </ul>
