@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
 import { AuthenticationContext } from '../Providers/AuthenticationProvider';
 
 const Header = () => {
   const {user,logOut}=useContext(AuthenticationContext);
+  const navigate = useNavigate()
+  const from ='/login'
   const handleLogout=()=>{
-    logOut().then().catch(error=>console.log(error))
+    logOut().then(()=>navigate(from, { replace: true })).catch(error=>console.log(error))
   }
     return (
         <div>

@@ -3,10 +3,12 @@ import './Login.css'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthenticationContext } from '../Providers/AuthenticationProvider';
 
+
 const Login = () => {
+  const {setLoading,user}=useContext(AuthenticationContext);
   const [success,setSuccess]=useState('');
   const [error,setError]=useState('');
-  const {logIn}=useContext(AuthenticationContext);
+  const {logIn,googleSignIn}=useContext(AuthenticationContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -27,6 +29,14 @@ const handleLogin=event=>{
   }).catch(error=>setError(error.message))
 }
 
+const handleGoogleSignIn=()=>{
+  googleSignIn().then(()=>navigate(from, { replace: true })).catch(error=>console.log(error))
+  
+  
+    
+  
+ 
+}
 
 
 
@@ -48,12 +58,21 @@ const handleLogin=event=>{
   <p>New to this website?Please <Link to='/register'>Register</Link></p>
  
   <button type="submit" class="btn btn-primary">Login</button>
-  <h4 className='text-center'>Or</h4>
-  <div className="d-flex">
-    
 
-  </div>
 </form>
+<h4 className='text-center'>Or</h4>
+  <button onClick={handleGoogleSignIn} className="d-flex align-items-center google mx-auto">
+  <i className="fa-brands fa-google m-3"></i>
+
+  Sign in with Google
+
+  </button>
+  <button className="d-flex align-items-center google mt-3 mx-auto">
+  <i class="fa-brands fa-github m-3"></i>
+
+  Sign in with Github
+
+  </button>
         </div>
     );
 };
