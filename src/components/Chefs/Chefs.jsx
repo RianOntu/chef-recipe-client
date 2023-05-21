@@ -5,7 +5,7 @@ import './Chefs.css';
 const Chefs = ({chefs}) => {
     return (
         
-        <div className='container mt-5'>
+        <div className='container mt-5 margins'>
             <h1 className='text-center mb-5'>All Indian Chefs</h1>
             <div className="chefs">
             {

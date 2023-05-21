@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import { AuthenticationContext } from '../Providers/AuthenticationProvider';
 
 const Header = () => {
+  const {user}=useContext(AuthenticationContext);
     return (
         <div>
            <nav class="navbar navbar-expand-lg">
@@ -12,15 +14,17 @@ const Header = () => {
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+      <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll align-items-center">
         <li class="nav-item">
           <Link to='/'>Home</Link>
         </li>
         <li class="nav-item">
           <Link to='/blog'>Blog</Link>
         </li>
-        <li class="nav-item">
-          <Link to='/login'>Login</Link>
+        <li className='photo'>
+        {
+          user?<div className='d-flex align-items-center'><li className='nav-item'><Link>Logout</Link></li><li className='nav-item'><img data-bs-toggle="tooltip" data-bs-placement="bottom" title={user.displayName} src={user.photoURL} alt="" /></li></div>:<li className='nav-item'><Link to='/login'>Login</Link></li>
+        }
         </li>
       
        

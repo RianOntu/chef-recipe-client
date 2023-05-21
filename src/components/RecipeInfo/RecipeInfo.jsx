@@ -5,7 +5,7 @@ import './RecipeInfo.css'
 const RecipeInfo = ({singleChef}) => {
     const {recipeInfo}=singleChef;
     return (
-        <div className='container'>
+        <div className='container margins'>
             <h1 className='text-center'>Recipes</h1>
            <div className="recipes">
            {
