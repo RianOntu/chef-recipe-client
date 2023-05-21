@@ -26,6 +26,7 @@ const Header = () => {
           user?<div className='d-flex align-items-center'><li className='nav-item'><Link>Logout</Link></li><li className='nav-item'><img data-bs-toggle="tooltip" data-bs-placement="bottom" title={user.displayName} src={user.photoURL} alt="" /></li></div>:<li className='nav-item'><Link to='/login'>Login</Link></li>
         }
         </li>
+        
       
        
       </ul>
