@@ -8,7 +8,7 @@ const Login = () => {
   const {setLoading,user}=useContext(AuthenticationContext);
   const [success,setSuccess]=useState('');
   const [error,setError]=useState('');
-  const {logIn,googleSignIn}=useContext(AuthenticationContext);
+  const {logIn,googleSignIn,githubSignIn}=useContext(AuthenticationContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -32,10 +32,10 @@ const handleLogin=event=>{
 const handleGoogleSignIn=()=>{
   googleSignIn().then(()=>navigate(from, { replace: true })).catch(error=>console.log(error))
   
-  
-    
-  
- 
+}
+const handleGithubLogin=()=>{
+  githubSignIn().then(()=>navigate(from, { replace: true })).catch(error=>console.log(error))
+  console.log(user);
 }
 
 
@@ -67,7 +67,7 @@ const handleGoogleSignIn=()=>{
   Sign in with Google
 
   </button>
-  <button className="d-flex align-items-center google mt-3 mx-auto">
+  <button onClick={handleGithubLogin} className="d-flex align-items-center google mt-3 mx-auto">
   <i class="fa-brands fa-github m-3"></i>
 
   Sign in with Github
