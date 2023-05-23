@@ -1,5 +1,10 @@
 .chefs{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 20px;
+    grid-gap:20px
+}
+@media (max-width: 576px){
+    .chefs{
+        grid-template-columns:1fr;
+    }
 }
