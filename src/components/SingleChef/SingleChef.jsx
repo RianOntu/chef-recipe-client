@@ -1,13 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './SingleChef.css'
+import './SingleChef.css';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import placeHolderImage from '../../../public/blur.jpg';
 
 const SingleChef = ({chef}) => {
     const {id,chefImg,chefName,yearsOfExperience,numberOfRecipes,likes}=chef;
     return (
         
             <div class="card">
-  <img class="card-img-top" src={chefImg} alt="Card image cap"/>
+               <LazyLoadImage src={chefImg}
+        width={"100%"} height={450}
+        alt="Image Alt" class="card-img-top"
+        placeholderSrc={placeHolderImage}
+        effect="blur"
+      />
+              
+          
+  
   <div class="card-body">
     <h5 class="card-title">Chef Name:{chefName}</h5>
     <p class="card-text">Years of experience:{yearsOfExperience}</p>
