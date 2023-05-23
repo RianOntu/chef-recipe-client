@@ -24,7 +24,7 @@ const SingleChef = ({chef}) => {
     <p class="card-text">Years of experience:{yearsOfExperience}</p>
     <p class="card-text">Number of recipes:{numberOfRecipes}</p>
     <p class="card-text">Likes:{likes}</p>
-    <Link to={`/chefs/${id}`}><button className='btn btn-success'>View Recipes</button></Link>
+    <Link className='b' to={`/chefs/${id}`}><button className='btn btn-success'>View Recipes</button></Link>
   </div>
 </div>
         

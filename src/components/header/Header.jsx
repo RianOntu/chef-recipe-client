@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
 import { AuthenticationContext } from '../Providers/AuthenticationProvider';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
   const {user,logOut}=useContext(AuthenticationContext);
@@ -21,14 +22,14 @@ const Header = () => {
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll align-items-center">
         <li class="nav-item">
-          <Link to='/'>Home</Link>
+          <ActiveLink className='a' to='/'>Home</ActiveLink>
         </li>
         <li class="nav-item">
-          <Link to='/blog'>Blog</Link>
+          <ActiveLink className='a' to='/blog'>Blog</ActiveLink>
         </li>
         <li className='photo'>
         {
-          user?<div className='d-flex align-items-center'><li onClick={handleLogout} className='nav-item'><Link>Logout</Link></li><li className='nav-item'><img data-bs-toggle="tooltip" data-bs-placement="bottom" title={user.displayName} src={user.photoURL} alt="" /></li></div>:<li className='nav-item'><Link to='/login'>Login</Link></li>
+          user?<div className='d-flex align-items-center'><li onClick={handleLogout} className='nav-item'><ActiveLink to='/logout'className='a'>Logout</ActiveLink></li><li className='nav-item'><img data-bs-toggle="tooltip" data-bs-placement="bottom" title={user.displayName} src={user.photoURL} alt="" /></li></div>:<li className='nav-item'><ActiveLink className='a' to='/login'>Login</ActiveLink></li>
         }
         </li>
 
