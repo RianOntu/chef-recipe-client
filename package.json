@@ -10,13 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-pdf/renderer": "^3.1.9",
     "firebase": "^9.22.0",
+    "jspdf": "^2.5.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-pdf": "^6.2.2",
     "react-router-dom": "^6.11.2",
+    "react-to-pdf-docs": "^1.0.0",
     "react-toastify": "^9.1.3",
     "sort-by": "^1.2.0"
   },

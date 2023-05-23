@@ -15,6 +15,7 @@ import Register from './components/Register/Register';
 import AuthenticationProvider from './components/Providers/AuthenticationProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NotFound from './components/NotFound/NotFound';
+import Blog from './components/Blog/Blog';
 
 const router=createBrowserRouter([
   {
@@ -25,6 +26,11 @@ const router=createBrowserRouter([
         path:'/',
         element:<Home></Home>,
         loader:()=>fetch('http://localhost:5000/chefs')
+      },
+      {
+       path:'/blog',
+       element:<Blog></Blog>
+
       },
       {
         path:'chefs/:id',

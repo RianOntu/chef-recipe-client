@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../Firebase/firebase.config';
+import {jsPDF} from 'jspdf';
 
 export const AuthenticationContext = createContext(null);
 
@@ -16,7 +17,22 @@ const AuthenticationProvider = ({children}) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
-
+    function convertToPDF() {
+        
+        const doc = new jsPDF("l", "px", "a1");
+        const xCoordinate = 20; 
+        const yCoordinate = -2000;
+      
+       
+        const page = document.getElementById('page');
+        doc.html(page,{
+            x: xCoordinate,
+            y: yCoordinate,
+          callback: function (pdf) {
+            pdf.save('blog.pdf');
+          }
+        });
+      }
     const logIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
@@ -57,7 +73,8 @@ const AuthenticationProvider = ({children}) => {
         logIn,
         logOut,
         googleSignIn,
-        githubSignIn
+        githubSignIn,
+        convertToPDF
     }
 
     return (
