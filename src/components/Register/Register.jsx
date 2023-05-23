@@ -78,7 +78,7 @@ const handleRegister=(event)=>{
    
   </div>
 
-  <p>Already have an account?Please <Link to='/login'>Login</Link></p>
+  <p>Already have an account?Please <Link className='register' to='/login'>Login</Link></p>
   
   <button type="submit" class="btn btn-primary">Register</button>
 </form>

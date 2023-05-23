@@ -35,7 +35,7 @@ const handleGoogleSignIn=()=>{
 }
 const handleGithubLogin=()=>{
   githubSignIn().then(()=>navigate(from, { replace: true })).catch(error=>console.log(error))
-  console.log(user);
+  
 }
 
 
@@ -55,7 +55,7 @@ const handleGithubLogin=()=>{
     <label for="exampleInputPassword1">Password</label>
     <input type="password" name='password' class="form-control" id="exampleInputPassword1" placeholder="Password" required/>
   </div>
-  <p>New to this website?Please <Link to='/register'>Register</Link></p>
+  <p>New to this website?Please <Link className='register' to='/register'>Register</Link></p>
  
   <button type="submit" class="btn btn-primary">Login</button>
 
