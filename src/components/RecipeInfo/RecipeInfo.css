@@ -6,3 +6,8 @@
 .margins{
     margin-bottom: 100px;
 }
+@media only screen and (max-width: 576px){
+	.recipes{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

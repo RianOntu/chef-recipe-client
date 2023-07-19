@@ -41,7 +41,7 @@ const handleGithubLogin=()=>{
 
 
     return (
-        <div className='formpage w-50 mx-auto mt-5'>
+        <div className='formpage  mx-auto mt-5'>
           <p className='text-success text-center'>{success}</p>
           <p className='text-danger text-center'>{error}</p>
             <h1 className='text-center'>Please Login</h1>
